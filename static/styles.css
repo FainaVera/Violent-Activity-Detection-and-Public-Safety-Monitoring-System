@@ -1,0 +1,105 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    /*background-image: url('static/scene.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.description {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.file-input {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
+.submit-button:active {
+    background-color: #1f6f8b;
+}
+/* Progress bar styling */
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none; /* Hidden by default, will be shown on form submission */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #3498db;
+    border-radius: 5px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video for Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Use Live Camera or Upload</h1>
+        <p><a href="{{ url_for('live_camera') }}">Start Live Camera Feed</a></p>
+        <br>
+        <p class="description">Please select a video file to upload and analyze.</p>
+        
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="file">Select video file:</label>
+            <input type="file" name="file" accept=".mp4,.avi,.mov" required class="file-input">
+            <button type="submit" class="submit-button">Upload</button>
+        </form>
+
+        {% if message %}
+        <div class="success-message">
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+
+        <div id="progress-container" class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector("form");
+        const progressContainer = document.getElementById("progress-container");
+        const progressBar = document.getElementById("progress-bar");
+
+        form.addEventListener("submit", function(event) {
+            progressContainer.style.display = "block"; 
+            let width = 0;
+
+            const interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressBar.style.width = width + "%";
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
