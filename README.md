@@ -5,7 +5,7 @@ The datasets used in this project are publicly available:
 - The **Weapons Detection Dataset** is taken from [this repository](https://github.com/ari-dasci/OD-WeaponDetection).
 Only 250 violent and 250 non-violent videos and weapons data annotated in YOLOv8 format were used for the project.
 
-## ⚙️ Setup
+## Setup
 
 1. **Clone the Repository**  
    ```bash
